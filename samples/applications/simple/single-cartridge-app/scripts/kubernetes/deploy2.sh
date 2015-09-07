@@ -56,7 +56,7 @@ curl -X POST -H "Content-Type: application/json" -d "@${cartridges_groups_path}/
 
 
 curl -X POST -H "Content-Type: application/json" -d "@${artifacts_path}/app2.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/applications
-curl -X POST -H "Content-Type: application/json" -d "@${artifacts_path}/app4.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/applications
+#curl -X POST -H "Content-Type: application/json" -d "@${artifacts_path}/app4.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/applications
 #curl -X POST -H "Content-Type: application/json" -d "@${artifacts_path}/app5.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/applications
 #curl -X POST -H "Content-Type: application/json" -d "@${artifacts_path}/cep-das-app.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/applications
 

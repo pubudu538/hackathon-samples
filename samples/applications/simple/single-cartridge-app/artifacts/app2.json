@@ -76,8 +76,6 @@
       "startupOrders": [
         {
           "aliases": [            
-            "cartridge.my-mysql",
-            "cartridge.my-das-zookeeper",
 	    "group.my-hbase-group",
             "cartridge.my-das-receiver",
             "cartridge.my-das-analytics",
@@ -138,8 +136,8 @@
       },
       {
         "type": "das-receiver",
-        "cartridgeMin": 1,
-        "cartridgeMax": 1,
+        "cartridgeMin": 3,
+        "cartridgeMax": 3,
         "subscribableInfo": {
           "alias": "my-das-receiver",
           "deploymentPolicy": "deployment-policy-1",
