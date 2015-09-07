@@ -69,6 +69,10 @@
 		{
 			"name": "payload_parameter.CONFIG_PARAM_PROFILE",
 			"value": "receiver"
-		}
+		},
+		{
+			"name": "payload_parameter.CONFIG_PARAM_CLUSTERING",
+			"value": "true"
+		},
 	]
 }

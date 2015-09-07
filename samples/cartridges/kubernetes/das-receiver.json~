@@ -27,13 +27,15 @@
 			"name": "thrift-port",
 			"protocol": "thrift",
 			"port": 7611,
-			"proxyPort": 0
+			"proxyPort": 0,
+			"kubernetesPortType": "NodePort"
 		},
 		{
 			"name": "binary-port",
 			"protocol": "thrift",
 			"port": 9611,
-			"proxyPort": 0
+			"proxyPort": 0,
+			"kubernetesPortType": "NodePort"
 		}
 	],
 	"iaasProvider": [

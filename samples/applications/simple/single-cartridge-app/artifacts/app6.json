@@ -78,8 +78,8 @@
       },
       {
         "type": "das-receiver",
-        "cartridgeMin": 3,
-        "cartridgeMax": 3,
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
         "subscribableInfo": {
           "alias": "dasrec",
           "deploymentPolicy": "deployment-policy-1",
