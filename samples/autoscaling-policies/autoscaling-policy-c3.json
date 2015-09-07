@@ -1,0 +1,14 @@
+{
+    "id": "autoscaling-policy-c3",
+    "loadThresholds": {
+        "requestsInFlight": {
+            "threshold": 100
+        },
+        "memoryConsumption": {
+            "threshold": 10
+        },
+        "loadAverage": {
+            "threshold": 50
+        }
+    }
+}

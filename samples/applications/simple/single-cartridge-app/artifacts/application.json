@@ -1,0 +1,19 @@
+{
+    "applicationId": "single-cartridge-app",
+    "alias": "single-cartridge-app",
+    "multiTenant": false,
+    "components": {
+        "cartridges": [
+            {
+                "type": "das-zookeeper",
+                "cartridgeMin": 1,
+                "cartridgeMax": 1,
+                "subscribableInfo": {
+                    "alias": "mydaszook",
+                    "autoscalingPolicy": "autoscaling-policy-1",
+                    "deploymentPolicy": "deployment-policy-1"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,153 @@
+{
+  "applicationId": "das-hbase-hadoop-app",
+  "multiTenant": false,
+  "alias": "das-hack-app",
+  "status": "Created",
+  "components": {
+    "groups": [
+      {
+        "name": "hbase-group",
+        "alias": "my-hbase-group",
+        "groupMinInstances": 1,
+        "groupMaxInstances": 1,
+        "cartridges": [
+          {
+            "type": "hbase",
+            "cartridgeMin": 1,
+            "cartridgeMax": 1,
+            "subscribableInfo": {
+              "alias": "my-hbase-mn",
+              "deploymentPolicy": "deployment-policy-1",
+              "autoscalingPolicy": "autoscaling-policy-1",
+              "maxMembers": 0,
+              "minMembers": 0
+            }
+          },
+          {
+            "type": "hbaseregionserver",
+            "cartridgeMin": 1,
+            "cartridgeMax": 2,
+            "subscribableInfo": {
+              "alias": "my-hbase-rsn",
+              "deploymentPolicy": "deployment-policy-1",
+              "autoscalingPolicy": "autoscaling-policy-1",
+              "maxMembers": 0,
+              "minMembers": 0
+            }
+          }
+        ],
+        "groups": [
+          {
+            "name": "hadoop-group",
+            "alias": "my-hadoop-group",
+            "groupMinInstances": 1,
+            "groupMaxInstances": 1,
+            "cartridges": [
+              {
+                "type": "hadoop",
+                "cartridgeMin": 1,
+                "cartridgeMax": 1,
+                "subscribableInfo": {
+                  "alias": "my-hadoop-nn",
+                  "deploymentPolicy": "deployment-policy-1",
+                  "autoscalingPolicy": "autoscaling-policy-1",
+                  "maxMembers": 0,
+                  "minMembers": 0
+                }
+              },
+              {
+                "type": "hadoopdata",
+                "cartridgeMin": 1,
+                "cartridgeMax": 2,
+                "subscribableInfo": {
+                  "alias": "my-hadoop-dn",
+                  "deploymentPolicy": "deployment-policy-1",
+                  "autoscalingPolicy": "autoscaling-policy-1",
+                  "maxMembers": 0,
+                  "minMembers": 0
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": {
+      "startupOrders": [
+        {
+          "aliases": [            
+            "cartridge.my-mysql",
+            "cartridge.my-das-zookeeper",
+	    "group.my-hbase-group",
+            "cartridge.my-das-receiver",
+            "cartridge.my-das-analytics",
+            "cartridge.my-das-dashboard"
+          ]
+        }
+      ],
+      "terminationBehaviour": "terminate-all"
+    },
+    "cartridges": [
+      {
+        "type": "mysql",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "my-mysql",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      },
+      {
+        "type": "das-analytics",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "my-das-analytics",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      },
+      {
+        "type": "das-zookeeper",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "my-das-zookeeper",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      },
+      {
+        "type": "das-dashboard",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "my-das-dashboard",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      },
+      {
+        "type": "das-receiver",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "my-das-receiver",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      }
+    ]
+  }
+}

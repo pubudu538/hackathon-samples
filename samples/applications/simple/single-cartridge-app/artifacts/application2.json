@@ -1,0 +1,50 @@
+{
+  "applicationId": "group-scaling",
+  "alias": "my-group-scaling",
+  "components": {
+    "groups": [
+      {
+        "name": "datagrp",
+        "alias": "my-group1",
+        "groupMinInstances": 1,
+        "groupMaxInstances": 1,
+        "deploymentPolicy": "deployment-policy-1",
+        "cartridges": [
+          {
+            "type": "hadoopdata",
+            "cartridgeMin": 1,
+            "cartridgeMax": 2,
+            "subscribableInfo": {
+              "alias": "my-c1-group1",
+              "autoscalingPolicy": "autoscaling-policy-1"
+            }
+          }
+        ]
+      }
+    ],
+    "cartridges": [
+      {
+        "type": "hadoop",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "mymaster",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "deploymentPolicy": "deployment-policy-1"
+        }
+      }
+    ],
+    "dependencies": {
+      "startupOrders": [
+        {
+          "aliases": [
+            "cartridge.my-c4",
+            "group.my-group1"
+          ]
+        }
+      ],
+      "terminationBehaviour": "terminate-dependents"
+    }
+  }
+}
+

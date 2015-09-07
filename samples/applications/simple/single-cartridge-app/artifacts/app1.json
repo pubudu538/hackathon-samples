@@ -1,0 +1,85 @@
+{
+  "applicationId": "app1",
+  "multiTenant": false,
+  "alias": "hdhbzoo",
+  "status": "Created",
+  "components": {
+    "dependencies": {
+      "startupOrders": [
+        {
+          "aliases": [
+            "cartridge.hadoopm",
+            "cartridge.hadoopdata",
+            "cartridge.zook",
+            "cartridge.hbase",
+            "cartridge.hbasers"
+          ]
+        }
+      ],
+      "terminationBehaviour": "terminate-none"
+    },
+    "cartridges": [
+      {
+        "type": "hadoop",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "hadoopm",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      },
+      {
+        "type": "hadoopdata",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "hadoopdata",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      },
+      {
+        "type": "das-zookeeper",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "zook",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      },
+      {
+        "type": "hbase",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "hbase",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      },
+      {
+        "type": "hbaseregionserver",
+        "cartridgeMin": 2,
+        "cartridgeMax": 2,
+        "subscribableInfo": {
+          "alias": "hbasers",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      }
+    ]
+  }
+}
+

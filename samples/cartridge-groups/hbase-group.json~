@@ -1,0 +1,43 @@
+{
+  "name": "hbase-group",
+  "groups": [
+    {
+      "name": "hadoop-group",
+      "cartridges": [
+        "hadoop",
+        "hadoopdata"
+      ],
+      "dependencies": {
+        "startupOrders": [
+          {
+            "aliases": [
+              "cartridge.hadoopm",
+              "cartridge.hadoopdata"
+            ]
+          }
+        ],
+        "terminationBehaviour": "terminate-dependents"
+      }
+    }
+  ],
+  "cartridges": [
+    "hbase",
+    "hbaseregionserver"
+  ],
+  "dependencies": {
+    "startupOrders": [
+      {
+        "aliases": [
+          "group.hadoop-group",
+          "cartridge.hadoopm",
+          "cartridge.hadoopdata"
+        ]
+      }
+    ],
+    "terminationBehaviour": "terminate-dependents"
+  }
+}
+
+
+
+

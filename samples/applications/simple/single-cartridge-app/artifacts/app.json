@@ -1,0 +1,55 @@
+{
+  "applicationId": "hadoopcluster",
+  "multiTenant": false,
+  "alias": "hadoopcluster",
+  "status": "Deployed",
+  "components": {
+    "groups": [
+      {
+        "name": "datagrp",
+        "alias": "data",
+        "groupMinInstances": 1,
+        "groupMaxInstances": 1,
+        "cartridges": [
+          {
+            "type": "hadoopdata",
+            "cartridgeMin": 1,
+            "cartridgeMax": 2,
+            "subscribableInfo": {
+              "alias": "alias2ds",
+              "deploymentPolicy": "deployment-policy-1",
+              "autoscalingPolicy": "autoscaling-policy-1",
+              "maxMembers": 0,
+              "minMembers": 0
+            }
+          }
+        ]
+      }
+    ],
+    "dependencies": {
+      "startupOrders": [
+        {
+          "aliases": [
+            "cartridge.master",
+            "group.data"
+          ]
+        }
+      ],
+      "terminationBehaviour": "terminate-none"
+    },
+    "cartridges": [
+      {
+        "type": "hadoop",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "master",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0
+        }
+      }
+    ]
+  }
+}

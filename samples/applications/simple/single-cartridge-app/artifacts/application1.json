@@ -1,0 +1,19 @@
+{
+    "applicationId": "hadoopdata",
+    "alias": "cartridge-app-data",
+    "multiTenant": false,
+    "components": {
+        "cartridges": [
+            {
+                "type": "hadoopdata",
+                "cartridgeMin": 1,
+                "cartridgeMax": 2,
+                "subscribableInfo": {
+                    "alias": "hdata",
+                    "autoscalingPolicy": "autoscaling-policy-1",
+                    "deploymentPolicy": "deployment-policy-1"
+                }
+            }
+        ]
+    }
+}

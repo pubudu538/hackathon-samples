@@ -1,0 +1,22 @@
+{
+  "name": "hadoop-group",
+  "cartridges": [
+    "hadoop",
+    "hadoopdata"
+  ],
+   "dependencies": {
+        "startupOrders": [
+            {
+                "aliases": [
+                    "cartridge.my-hadoop-nn",
+                    "cartridge.my-hadoop-dn"
+                ]
+            }
+        ],
+        "terminationBehaviour": "terminate-all"
+    }
+
+}
+
+
+

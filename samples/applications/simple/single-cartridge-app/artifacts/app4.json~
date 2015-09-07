@@ -1,0 +1,101 @@
+{
+  "applicationId": "das-analytics",
+  "multiTenant": false,
+  "alias": "fdsaf",
+  "components": {
+    "dependencies": {
+      "startupOrders": [
+        {
+          "aliases": [
+            "cartridge.hadoop",
+            "cartridge.hbase",
+            "cartridge.das"
+          ]
+        }
+      ],
+      "terminationBehaviour": "terminate-none"
+    },
+    "cartridges": [
+      {
+        "type": "hadoop",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "hadoop",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "hadoop",
+            "privateRepo": false
+          }
+        }
+      },
+      {
+        "type": "hbase",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "hbase",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "hbase",
+            "privateRepo": false
+          }
+        }
+      },
+      {
+        "type": "das-zookeeper",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "zoo",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "zoo",
+            "privateRepo": false
+          }
+        }
+      },
+      {
+        "type": "mysql",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "mysql",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "mysql",
+            "privateRepo": false
+          }
+        }
+      },
+      {
+        "type": "das-analytics",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "das",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "das",
+            "privateRepo": false
+          }
+        }
+      }
+    ]
+  }
+}
