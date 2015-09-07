@@ -31,3 +31,5 @@ bash ${common_folder}/undeploy.sh
 
 echo "Removing kubernetes cluster..."
 curl -X DELETE -H "Content-Type: application/json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/kubernetesClusters/kubernetes-cluster-2
+
+

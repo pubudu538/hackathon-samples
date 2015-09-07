@@ -75,10 +75,8 @@
     "dependencies": {
       "startupOrders": [
         {
-          "aliases": [
-            "group.my-hbase-group",
-            "cartridge.my-mysql",
-            "cartridge.my-das-zookeeper",
+          "aliases": [            
+	    "group.my-hbase-group",
             "cartridge.my-das-receiver",
             "cartridge.my-das-analytics",
             "cartridge.my-das-dashboard"
