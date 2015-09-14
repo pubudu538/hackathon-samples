@@ -1,0 +1,186 @@
+{
+  "applicationId": "das-fulapp",
+  "multiTenant": false,
+  "alias": "fdad",
+  "components": {
+    "groups": [
+      {
+        "name": "hadoop-group",
+        "alias": "hadoopgrp",
+        "groupMinInstances": 1,
+        "groupMaxInstances": 1,
+        "cartridges": [
+          {
+            "type": "hadoop",
+            "cartridgeMin": 1,
+            "cartridgeMax": 1,
+            "subscribableInfo": {
+              "alias": "my-hadoop-nn",
+              "deploymentPolicy": "deployment-policy-1",
+              "autoscalingPolicy": "autoscaling-policy-1",
+              "maxMembers": 0,
+              "minMembers": 0,
+              "artifactRepository": {
+                "alias": "my-hadoop-nn",
+                "privateRepo": false
+              }
+            }
+          },
+          {
+            "type": "hadoopdata",
+            "cartridgeMin": 2,
+            "cartridgeMax": 2,
+            "subscribableInfo": {
+              "alias": "my-hadoop-dn",
+              "deploymentPolicy": "deployment-policy-1",
+              "autoscalingPolicy": "autoscaling-policy-1",
+              "maxMembers": 0,
+              "minMembers": 0,
+              "artifactRepository": {
+                "alias": "my-hadoop-dn",
+                "privateRepo": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "dependencies": {
+      "startupOrders": [
+        {
+          "aliases": [
+            "group.hadoopgrp",
+            "cartridge.hbase",
+            "cartridge.das-rec-mgt",
+            "cartridge.das-rec",
+            "cartridge.das-ana-mgt",
+            "cartridge.das-ana",
+            "cartridge.das-dash"
+          ]
+        }
+      ],
+      "terminationBehaviour": "terminate-none"
+    },
+    "cartridges": [
+      {
+        "type": "das-analytics",
+        "cartridgeMin": 2,
+        "cartridgeMax": 2,
+        "subscribableInfo": {
+          "alias": "das-ana",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "das-ana",
+            "privateRepo": false
+          }
+        }
+      },
+      {
+        "type": "das-analytics-manager",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "das-ana-mgt",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "das-ana-mgt",
+            "privateRepo": false
+          }
+        }
+      },
+      {
+        "type": "das-receiver-manager",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "das-rec-mgt",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "das-rec-mgt",
+	    "privateRepo": true,
+            "repoUrl": "https://github.com/pubudu538/das-depsync.git",
+            "repoUsername": "pubudu538",
+            "repoPassword": "pubciworld538"
+          }
+        }
+      },
+      {
+        "type": "hbase",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "hbase",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "hbase",
+            "privateRepo": false
+          }
+        }
+      },
+      {
+        "type": "das-zookeeper",
+        "cartridgeMin": 3,
+        "cartridgeMax": 3,
+        "subscribableInfo": {
+          "alias": "zoo",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "zoo",
+            "privateRepo": false
+          }
+        }
+      },
+      {
+        "type": "das-dashboard",
+        "cartridgeMin": 1,
+        "cartridgeMax": 1,
+        "subscribableInfo": {
+          "alias": "das-dash",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "das-dash",
+            "privateRepo": false
+          }
+        }
+      },
+      {
+        "type": "das-receiver",
+        "cartridgeMin": 2,
+        "cartridgeMax": 2,
+        "subscribableInfo": {
+          "alias": "das-rec",
+          "deploymentPolicy": "deployment-policy-1",
+          "autoscalingPolicy": "autoscaling-policy-1",
+          "maxMembers": 0,
+          "minMembers": 0,
+          "artifactRepository": {
+            "alias": "das-rec",
+            "privateRepo": true,
+            "repoUrl": "https://github.com/pubudu538/das-depsync.git",
+            "repoUsername": "pubudu538",
+            "repoPassword": "pubciworld538"
+          }
+        }
+      }
+    ]
+  }
+}
+

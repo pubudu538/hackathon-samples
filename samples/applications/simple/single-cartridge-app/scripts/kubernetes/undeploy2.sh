@@ -20,7 +20,7 @@
 #
 # --------------------------------------------------------------
 #
-host_ip="localhost"
+host_ip="162.209.78.160"
 host_port=9443
 
 prgdir=`dirname "$0"`
@@ -43,4 +43,8 @@ curl -X DELETE -H "Content-Type: application/json" -k -v -u admin:admin https://
 curl -X DELETE -H "Content-Type: application/json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges/das-analytics
 curl -X DELETE -H "Content-Type: application/json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges/das-dashboard
 curl -X DELETE -H "Content-Type: application/json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges/das-receiver
+
+curl -X DELETE -H "Content-Type: application/json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges/das-analytics-manager
+curl -X DELETE -H "Content-Type: application/json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges/das-receiver-manager
+
 

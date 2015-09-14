@@ -12,7 +12,7 @@
 		{
 			"protocol": "https",
 			"port": 9443,
-			"proxyPort": 8443,
+			"proxyPort": 0,
 			"name": "mgt-console",
 			"kubernetesPortType": "NodePort"
 		}
@@ -42,12 +42,44 @@
 			"value": "PCA"
 		},
 		{
-			"name": "payload_parameter.APPLICATION_PATH",
-			"value": "/var/www"
-		},
-		{
 			"name": "payload_parameter.CONFIG_PARAM_PROFILE",
 			"value": "dashboard"
+		},
+		{
+			"name": "payload_parameter.CONFIG_PARAM_WSO2_ANALYTICS_WSO2_ANALYTICS_FS_DB_URL",
+			"value": "jdbc:mysql://162.209.78.160:3306/ANALYTICS_FS_DB?autoReconnect=true"
+		},
+		{
+			"name": "payload_parameter.CONFIG_PARAM_WSO2_ANALYTICS_WSO2_ANALYTICS_FS_DB_USER_NAME",
+			"value": "root"
+		},
+		{
+			"name": "payload_parameter.CONFIG_PARAM_WSO2_ANALYTICS_WSO2_ANALYTICS_FS_DB_PASSWORD",
+			"value": "root"
+		},
+		{
+			"name": "payload_parameter.CONFIG_PARAM_WSO2_ANALYTICS_PROCESSED_DATA_STORE_DB_URL",
+			"value": "jdbc:mysql://162.209.78.160:3306/ANALYTICS_PROCESSED_DATA_STORE?autoReconnect=true"
+		},
+		{
+			"name": "payload_parameter.CONFIG_PARAM_WSO2_ANALYTICS_PROCESSED_DATA_STORE_DB_USER_NAME",
+			"value": "root"
+		},
+		{
+			"name": "payload_parameter.CONFIG_PARAM_WSO2_ANALYTICS_PROCESSED_DATA_STORE_DB_PASSWORD",
+			"value": "root"
+		},
+		{
+			"name": "payload_parameter.CONFIG_PARAM_LOCAL_REGISTRY_DB_URL",
+			"value": "jdbc:mysql://162.209.78.160:3306/DAS_REG?autoReconnect=true"
+		},
+		{
+			"name": "payload_parameter.CONFIG_PARAM_LOCAL_REGISTRY_DB_USER_NAME",
+			"value": "root"
+		},
+		{
+			"name": "payload_parameter.CONFIG_PARAM_LOCAL_REGISTRY_DB_USER_NAME",
+			"value": "root"
 		}
 	]
 }

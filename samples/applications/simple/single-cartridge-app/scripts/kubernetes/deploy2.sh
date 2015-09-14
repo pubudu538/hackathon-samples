@@ -20,7 +20,7 @@
 #
 # --------------------------------------------------------------
 #
-host_ip="localhost"
+host_ip="162.209.78.160"
 host_port=9443
 iaas="kubernetes"
 
@@ -41,6 +41,10 @@ curl -X POST -H "Content-Type: application/json" -d "@${iaas_cartridges_path}/da
 curl -X POST -H "Content-Type: application/json" -d "@${iaas_cartridges_path}/das-analytics.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges
 curl -X POST -H "Content-Type: application/json" -d "@${iaas_cartridges_path}/das-dashboard.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges
 curl -X POST -H "Content-Type: application/json" -d "@${iaas_cartridges_path}/das-receiver.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges
+
+curl -X POST -H "Content-Type: application/json" -d "@${iaas_cartridges_path}/das-analytics-manager.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges
+curl -X POST -H "Content-Type: application/json" -d "@${iaas_cartridges_path}/das-receiver-manager.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges
+
 curl -X POST -H "Content-Type: application/json" -d "@${iaas_cartridges_path}/hadoop.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges
 curl -X POST -H "Content-Type: application/json" -d "@${iaas_cartridges_path}/hadoopdata.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges
 curl -X POST -H "Content-Type: application/json" -d "@${iaas_cartridges_path}/hbase.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridges
@@ -55,7 +59,7 @@ curl -X POST -H "Content-Type: application/json" -d "@${cartridges_groups_path}/
 curl -X POST -H "Content-Type: application/json" -d "@${cartridges_groups_path}/hbase-group.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/cartridgeGroups
 
 
-curl -X POST -H "Content-Type: application/json" -d "@${artifacts_path}/app6.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/applications
+curl -X POST -H "Content-Type: application/json" -d "@${artifacts_path}/app7.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/applications
 #curl -X POST -H "Content-Type: application/json" -d "@${artifacts_path}/app4.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/applications
 #curl -X POST -H "Content-Type: application/json" -d "@${artifacts_path}/app5.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/applications
 #curl -X POST -H "Content-Type: application/json" -d "@${artifacts_path}/cep-das-app.json" -k -v -u admin:admin https://${host_ip}:${host_port}/api/applications
